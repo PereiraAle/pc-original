@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Conversor</title>
+	<style>
+		form {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			margin-top: 50px;
+		}
+
+		label {
+			font-size: 20px;
+			margin-bottom: 10px;
+		}
+
+		input[type="number"] {
+			padding: 5px;
+			margin-bottom: 20px;
+			font-size: 18px;
+		}
+
+		button {
+			padding: 10px;
+			background-color: #4CAF50;
+			color: white;
+			font-size: 18px;
+			border: none;
+			cursor: pointer;
+		}
+
+		button:hover {
+			background-color: #3e8e41;
+		}
+
+		#resultado {
+			font-size: 20px;
+			margin-top: 30px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h1>Conversor de horas a días</h1>
+	<form>
+		<label for="horas">Ingrese la cantidad de horas:</label>
+		<input type="number" id="horas" name="horas" min="1" required>
+
+		<button type="submit" onclick="convertir()">Convertir</button>
+		<div id="resultado"></div>
+	</form>
+
+	
+
+	<script>
+		function convertir(horas) {
+			var horas = document.getElementById("horas").value;
+			var dias = horas / 24;
+			document.getElementById("resultado").innerHTML = horas + " horas equivale a " + dias + " días.";
+		}
+	</script>
+</body>
+</html>
